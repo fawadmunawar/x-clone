@@ -6,13 +6,13 @@ import { getAuth } from "firebase/auth"
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBcTDp86nMpp8p6qWvE20GLc-qfXit7ok0",
-  authDomain: "x-clone-c0341.firebaseapp.com",
-  projectId: "x-clone-c0341",
-  storageBucket: "x-clone-c0341.appspot.com",
-  messagingSenderId: "842086107910",
-  appId: "1:842086107910:web:4e23f6e041686ff04e2c87",
-  measurementId: "G-MZDN8QVZLT"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
