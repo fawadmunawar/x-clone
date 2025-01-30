@@ -23,6 +23,7 @@ import { FaRegComment } from "react-icons/fa6";
 import { AiOutlineRetweet } from "react-icons/ai";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { RxCross2 } from "react-icons/rx";
 import { LuBarChart2 } from "react-icons/lu";
 import { useState, useEffect } from "react";
 import {storage} from "../Firebase/firebase"
@@ -64,12 +65,13 @@ const page = () => {
   return (
     <div className="flex bg-gray-900 text-white h-screen overflow-x-hidden font-custom flex-wrap">
       {/* Left Sidebar */}
-      <div className="w-1/5 bg-black px-4 border-r border-gray-700 box-border lg:flex flex-col items-center">
+      <div className="w-1/5 bg-black px-4 border-r border-gray-700 box-border  lg:flex flex-col items-center">
           <XIcon className="hidden lg:flex lg:w-[28px] lg:h-[26px] lg:ml-3" style={{ fill: "white" }} />
-          <GiHamburgerMenu className="lg:hidden w-6 h-6 ml-1" onClick={handleHamBurger}/>
+          {/* <GiHamburgerMenu className="lg:hidden w-6 h-6 ml-1" onClick={handleHamBurger}/> */}
+          {hamIcon ? (<RxCross2 className="lg:hidden text-2xl font-bold" onClick={handleHamBurger}/>) : (<GiHamburgerMenu className="lg:hidden w-6 h-6" onClick={handleHamBurger} />)}
           {hamIcon && (
             <div className="w-1/5 bg-black box-border flex flex-col items-start gap-6 mt-4 z-50 text-sm sm:text-lg transition">
-                <div><a href="">Home</a></div>
+                {/* <div><a href="">Home</a></div>
                 <div><a href="">Explore</a></div>
                 <div><a href="">Notifications</a></div>
                 <div><a href="">Messages</a></div>
@@ -77,7 +79,16 @@ const page = () => {
                 <div><a href="">Communities</a></div>
                 <div><a href="">Profile</a></div>
                 <div><a href="">More</a></div>
-                <div><a href="">Post</a></div>
+                <div><a href="">Post</a></div> */}
+                <div><GoHomeFill className="w-6 h-6" /></div>
+                <div><IoSearchOutline className="w-6 h-6" /></div>
+                <div><RiNotification2Line className="w-6 h-6" /></div>
+                <div><FaRegEnvelope className="w-6 h-6" /></div>
+                <div><RiCompass4Line className="w-6 h-6" /></div>
+                <div><IoPeopleOutline className="w-6 h-6" /></div>
+                <div><FaRegUser className="w-6 h-6" /></div>
+                <div><CgMoreO className="w-6 h-6" /></div>
+                <div></div>
             </div>
           )}
         <div className="hidden lg:flex flex-col p-4">
